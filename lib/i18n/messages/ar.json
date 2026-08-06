@@ -17,14 +17,12 @@
     "toggleMenu": "فتح القائمة",
     "openSearch": "فتح البحث"
   },
-  "form":{
-    "title":"تصفح حسب نمط  الملابس",
-    "casual":"كاجوال",
-    "gym":"رياضي",
-    "formal":"رسمي",
-    "party":"سهرة"
-
-
+  "form": {
+    "title": "تصفح حسب نمط  الملابس",
+    "casual": "كاجوال",
+    "gym": "رياضي",
+    "formal": "رسمي",
+    "party": "سهرة"
   },
   "Arrivals": {
     "loading": "جارٍ التحميل...",
@@ -38,38 +36,38 @@
     "emailPlaceholder": "⊠ أدخل بريدك الإلكتروني",
     "subscribe": "اشترك في النشرة الإخبارية"
   },
- "ProductDetails": {
-  "selectColors": "اختر اللون",
-  "chooseSize": "اختر المقاس",
-  "addToCart": "أضف إلى السلة",
-  "addedToCart": "تمت الإضافة ✓",
-  "decreaseQuantity": "تقليل الكمية",
-  "increaseQuantity": "زيادة الكمية",
-  "sizes": {
-    "small": "صغير",
-    "medium": "متوسط",
-    "large": "كبير",
-    "xLarge": "كبير جداً"
+  "ProductDetails": {
+    "selectColors": "اختر اللون",
+    "chooseSize": "اختر المقاس",
+    "addToCart": "أضف إلى السلة",
+    "addedToCart": "تمت الإضافة ✓",
+    "decreaseQuantity": "تقليل الكمية",
+    "increaseQuantity": "زيادة الكمية",
+    "sizes": {
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير",
+      "xLarge": "كبير جداً"
+    },
+    "tabs": {
+      "productDetails": "تفاصيل المنتج",
+      "ratingReviews": "التقييمات والمراجعات",
+      "faqs": "الأسئلة الشائعة"
+    },
+    "noFaqs": "لا توجد أسئلة شائعة بعد.",
+    "reviewsPlaceholder": "تقييم — قم بربطها بمكوّن التقييمات الخاص بك.",
+    "allReviews": "كل التقييمات",
+    "filterReviews": "فلترة التقييمات",
+    "sortLatest": "الأحدث",
+    "sortOldest": "الأقدم",
+    "sortHighestRating": "الأعلى تقييمًا",
+    "writeReview": "كتابة تقييم",
+    "writeReviewPrompt": "من فضلك اكتب تقييمك:",
+    "reviewThanks": "شكرًا لتقييمك!",
+    "reviewError": "عذرًا، حدث خطأ أثناء حفظ تقييمك. حاول مرة أخرى لاحقًا.",
+    "loadMoreReviews": "عرض المزيد من التقييمات",
+    "moreOptions": "خيارات إضافية"
   },
-  "tabs": {
-    "productDetails": "تفاصيل المنتج",
-    "ratingReviews": "التقييمات والمراجعات",
-    "faqs": "الأسئلة الشائعة"
-  },
-  "noFaqs": "لا توجد أسئلة شائعة بعد.",
-  "reviewsPlaceholder": "تقييم — قم بربطها بمكوّن التقييمات الخاص بك.",
-  "allReviews": "كل التقييمات",
-  "filterReviews": "فلترة التقييمات",
-  "sortLatest": "الأحدث",
-  "sortOldest": "الأقدم",
-  "sortHighestRating": "الأعلى تقييمًا",
-  "writeReview": "كتابة تقييم",
-  "writeReviewPrompt": "من فضلك اكتب تقييمك:",
-  "reviewThanks": "شكرًا لتقييمك!",
-  "reviewError": "عذرًا، حدث خطأ أثناء حفظ تقييمك. حاول مرة أخرى لاحقًا.",
-  "loadMoreReviews": "عرض المزيد من التقييمات",
-  "moreOptions": "خيارات إضافية"
-},
   "Footer": {
     "logo": "SHOP.CO",
     "tagline": "لدينا ملابس تناسب أسلوبك وتفخر بارتدائها. من النساء إلى الرجال.",
@@ -135,6 +133,7 @@
   },
   "Auth": {
     "email": "البريد الإلكتروني",
+    "logout": "تسجيل الخروج",
     "password": "كلمة المرور",
     "confirmPassword": "تأكيد كلمة المرور",
     "firstName": "الاسم الأول",
@@ -171,8 +170,6 @@
     "apply": "تطبيق",
     "checkout": "الذهاب للدفع →"
   },
-  
-  "logout": "تسجيل الخروج",
   "Breadcrumb": {
     "home": "الرئيسية",
     "shop": "تسوق",
@@ -227,6 +224,33 @@
       "priceHigh": "السعر: من الأعلى للأقل",
       "rating": "التقييم"
     }
-  
+  },
+  "Checkout": {
+    "home": "الرئيسية",
+    "cart": "السلة",
+    "title": "إتمام الطلب",
+    "emptyCart": "سلتك فارغة. أضف بعض المنتجات قبل إتمام الطلب.",
+    "continueShopping": "متابعة التسوق",
+    "shippingInfo": "بيانات الشحن",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "address": "العنوان",
+    "city": "المدينة",
+    "phone": "رقم الهاتف",
+    "items": "عناصر الطلب",
+    "qty": "الكمية",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "الإجمالي الفرعي",
+    "discount": "خصم (-20%)",
+    "deliveryFee": "رسوم التوصيل",
+    "total": "الإجمالي",
+    "placeOrder": "تأكيد الطلب",
+    "placingOrder": "جارٍ تنفيذ الطلب...",
+    "successTitle": "تم تأكيد الطلب بنجاح!",
+    "successMessage": "شكرًا لشرائك. سنرسل لك بريد تأكيد قريبًا.",
+    "backToHome": "العودة للرئيسية",
+    "errors": {
+      "required": "هذا الحقل مطلوب"
+    }
   }
 }

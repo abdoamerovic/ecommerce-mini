@@ -1,5 +1,3 @@
-// Place this file at: components/form.tsx
-
 "use client"
 
 import Image from "next/image"
@@ -11,11 +9,11 @@ export default function Form() {
   const locale = useLocale()
 
   const photos = [
-  { id: 1, src: "/images/form/casul.png", alt: "casual", ratio: "1 / 1" },
-  { id: 2, src: "/images/form/formal.png", alt: "formal", ratio: "2 / 1" },
-  { id: 3, src: "/images/form/gym.png", alt: "gym", ratio: "2 / 1" },
-  { id: 4, src: "/images/form/party.png", alt: "party", ratio: "1 / 1" },
-]
+    { id: 1, src: "/images/form/casul.png", alt: "casual", ratio: "1 / 1" },
+    { id: 2, src: "/images/form/formal.png", alt: "formal", ratio: "2 / 1" },
+    { id: 3, src: "/images/form/gym.png", alt: "gym", ratio: "2 / 1" },
+    { id: 4, src: "/images/form/party.png", alt: "party", ratio: "1 / 1" },
+  ]
 
   const areas = ["one", "two", "three", "four"]
 
@@ -43,10 +41,6 @@ export default function Form() {
               style={{ gridArea: areas[i] }}
               className={`relative overflow-hidden rounded-lg ${imag.ratio} md:aspect-auto md:h-full`}
             >
-              {/* NOTE: original link was missing the locale prefix
-                  (/Product/casual instead of /en/Product/casual), which would
-                  have 404'd since app/[locale]/Product/[type]/page.tsx requires
-                  a locale segment. Fixed below. */}
               <Link
                 href={`/${locale}/Product/${imag.alt.toLowerCase()}`}
                 className="block relative w-full h-full"

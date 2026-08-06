@@ -1,14 +1,19 @@
-
-"use client"
+import { use } from "react"
 import Categorypadge from "@/components/Categorypadge"
 
- export default function ProductPage({params}: {params: {alt: string}}){
-    return(
-      
-        <div>
-            <Categorypadge category={params.alt}/>
-        </div>
-        
-      
-    )
- } 
+interface PageProps {
+  params: Promise<{
+    locale: string
+    type: string
+  }>
+}
+
+export default function ProductPage({ params }: PageProps) {
+  const resolvedParams = use(params)
+
+  return (
+    <div>
+      <Categorypadge category={resolvedParams.type} />
+    </div>
+  )
+}

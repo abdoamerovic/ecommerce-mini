@@ -24,7 +24,7 @@
     "formal": "formal",
     "party": "party"
   },
-  "logout": "Logout",
+  
   "Arrivals": {
     "loading": "Loading...",
     "title": "New Arrivals",
@@ -134,6 +134,7 @@
   },
   "Auth": {
     "email": "Email",
+    "logout": "Logout",
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "firstName": "First Name",
@@ -204,6 +205,52 @@
       "priceLow": "Price: Low to High",
       "priceHigh": "Price: High to Low",
       "rating": "Rating"
+    }
+  },"Cart": {
+  "home": "Home",
+  "category": "Category",
+  "title": "Shopping Cart",
+  "empty": "Your cart is empty.",
+  "size": "Size",
+  "color": "Color",
+  "removeItem": "Remove item",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity",
+  "orderSummary": "Order Summary",
+  "subtotal": "Subtotal",
+  "discount": "Discount (-20%)",
+  "deliveryFee": "Delivery Fee",
+  "total": "Total",
+  "couponPlaceholder": "Enter coupon code",
+  "apply": "Apply",
+  "checkout": "Go to Checkout →"
+},
+"Checkout": {
+    "home": "Home",
+    "cart": "Cart",
+    "title": "Checkout",
+    "emptyCart": "Your cart is empty. Add some items before checking out.",
+    "continueShopping": "Continue Shopping",
+    "shippingInfo": "Shipping Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "phone": "Phone Number",
+    "items": "Order Items",
+    "qty": "Qty",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "discount": "Discount (-20%)",
+    "deliveryFee": "Delivery Fee",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "placingOrder": "Placing Order...",
+    "successTitle": "Order Placed Successfully!",
+    "successMessage": "Thank you for your purchase. We'll send you a confirmation email shortly.",
+    "backToHome": "Back to Home",
+    "errors": {
+      "required": "This field is required"
     }
   }
 }

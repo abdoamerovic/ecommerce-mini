@@ -1,3 +1,5 @@
+// Place this file at: components/Detials.tsx
+
 "use client"
 
 import { useState } from "react"
@@ -5,6 +7,7 @@ import Image from "next/image"
 import { Star, Minus, Plus, Check, SlidersHorizontal, MoreHorizontal, BadgeCheck } from "lucide-react"
 import { useTranslations, useLocale } from "next-intl"
 import reviewsData from "@/data/reviews.json"
+import { useCartStore } from "@/lib/store/cartStore"
 
 type ColorVariant = {
   name: string
@@ -62,30 +65,12 @@ const SIZE_KEYS = ["small", "medium", "large", "xLarge"] as const
 const INITIAL_REVIEWS_COUNT = 6
 const EXPANDED_REVIEWS_COUNT = 10
 
-const addToCart = (item: {
-  productId: string
-  name: string
-  size: string
-  color: string
-  price: number
-  image: string
-  quantity: number
-}) => {
-  if (typeof window === "undefined") return
-  try {
-    const existingCart = localStorage.getItem("cart")
-    const cartItems = existingCart ? JSON.parse(existingCart) : []
-    cartItems.push(item)
-    localStorage.setItem("cart", JSON.stringify(cartItems))
-  } catch (error) {
-    console.error("Error saving cart item:", error)
-  }
-}
-
 export default function Detials({ product = mockProduct }: { product?: Product }) {
   const t = useTranslations("ProductDetails")
   const rawLocale = useLocale()
   const locale = rawLocale === "ar" ? "ar" : "en"
+
+  const addItem = useCartStore((state) => state.addItem)
 
   const [selectedColorIndex, setSelectedColorIndex] = useState(0)
   const [mainImage, setMainImage] = useState(0)
@@ -115,7 +100,7 @@ export default function Detials({ product = mockProduct }: { product?: Product }
   }
 
   function handleAddToCart() {
-    addToCart({
+    addItem({
       productId: product.id,
       name,
       size: selectedSize,

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState, useMemo } from "react"
@@ -34,10 +33,6 @@ type Product = {
 const DEFAULT_IMAGE = "/images/default-product.jpg"
 const PAGE_SIZE = 9
 
-// NOTE: these two lists don't map to real fields in products.json yet
-// (there's no `type` or `size` field on a product). The UI below renders
-// them to match the design, but selecting them won't filter results until
-// those fields are added to the data. See comments further down.
 const CLOTHING_TYPES = ["tshirts", "shorts", "shirts", "hoodie", "jeans"] as const
 const SIZES = [
   "xxSmall", "xSmall", "small", "medium", "large",
@@ -64,6 +59,7 @@ function FilterSection({
   return (
     <div className="border-b border-gray-200 py-4">
       <button
+        type="button"
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between font-semibold text-sm"
       >
@@ -75,7 +71,7 @@ function FilterSection({
   )
 }
 
-export default function CategoryPage({ category }: { category: string }) {
+export default function Categorypadge({ category }: { category: string }) {
   const t = useTranslations("CategoryPage")
   const tBread = useTranslations("Breadcrumb")
   const locale = useLocale()
@@ -87,22 +83,18 @@ export default function CategoryPage({ category }: { category: string }) {
   const [selectedColor, setSelectedColor] = useState<string | null>(null)
   const [selectedSize, setSelectedSize] = useState<string | null>(null)
   const [selectedType, setSelectedType] = useState<string | null>(null)
-  const [selectedDressStyle, setSelectedDressStyle] = useState<string | null>(category)
+  const [selectedDressStyle, setSelectedDressStyle] = useState<string | null>(null)
   const [sortBy, setSortBy] = useState<SortOption>("popular")
   const [page, setPage] = useState(1)
 
+  const activeDressStyle = selectedDressStyle ?? category
+
   const filtered = useMemo(() => {
     let list = allProducts.filter((p) => {
-      if (selectedDressStyle && p.category !== selectedDressStyle) return false
+      if (activeDressStyle && p.category.toLowerCase() !== activeDressStyle.toLowerCase()) return false
       if (p.price > priceRange) return false
       if (selectedColor && !p.colors?.some((c) => c.hex.toLowerCase() === selectedColor.toLowerCase())) {
         return false
-      }
-      if (selectedType && true) {
-        // if (p.type !== selectedType) return false
-      }
-      if (selectedSize && true) {
-        // if (!p.sizes?.includes(selectedSize)) return false
       }
       return true
     })
@@ -124,17 +116,14 @@ export default function CategoryPage({ category }: { category: string }) {
     }
 
     return list
-  }, [allProducts, selectedDressStyle, priceRange, selectedColor, selectedType, selectedSize, sortBy])
+  }, [allProducts, selectedDressStyle, priceRange, selectedColor, sortBy])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const paged = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
 
   function goToProduct(product: Product) {
-    // NOTE: original was missing the /${locale} prefix here, so these links
-    // would 404 under the [locale] routing structure. Fixed below.
-    if (product.category === "men") router.push(`/${locale}/Category/man?id=${product.id}`)
-    else if (product.category === "women") router.push(`/${locale}/Category/woman?id=${product.id}`)
-  }
+  router.push(`/${locale}/Product/${product.category.toLowerCase()}?id=${product.id}`)
+}
 
   function pageNumbers() {
     const nums: (number | "dots")[] = []
@@ -154,7 +143,7 @@ export default function CategoryPage({ category }: { category: string }) {
       <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
         <span>{tBread("home")}</span>
         <span>›</span>
-        <span className="text-black">{categoryLabel}</span>
+        <span className="text-black capitalize">{categoryLabel}</span>
       </nav>
 
       <div className="flex flex-col lg:flex-row gap-8">
@@ -166,6 +155,7 @@ export default function CategoryPage({ category }: { category: string }) {
                 {CLOTHING_TYPES.map((type) => (
                   <li key={type}>
                     <button
+                      type="button"
                       onClick={() => setSelectedType((s) => (s === type ? null : type))}
                       className={`w-full flex items-center justify-between hover:text-black ${
                         selectedType === type ? "text-black font-medium" : ""
@@ -202,6 +192,7 @@ export default function CategoryPage({ category }: { category: string }) {
                 {COLOR_SWATCHES.map((hex) => (
                   <button
                     key={hex}
+                    type="button"
                     aria-label={hex}
                     onClick={() => {
                       setSelectedColor((c) => (c === hex ? null : hex))
@@ -221,6 +212,7 @@ export default function CategoryPage({ category }: { category: string }) {
                 {SIZES.map((size) => (
                   <button
                     key={size}
+                    type="button"
                     onClick={() => setSelectedSize((s) => (s === size ? null : size))}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                       selectedSize === size
@@ -239,6 +231,7 @@ export default function CategoryPage({ category }: { category: string }) {
                 {DRESS_STYLES.map((style) => (
                   <li key={style}>
                     <button
+                      type="button"
                       onClick={() => {
                         setSelectedDressStyle((s) => (s === style ? null : style))
                         setPage(1)
@@ -256,6 +249,7 @@ export default function CategoryPage({ category }: { category: string }) {
             </FilterSection>
 
             <button
+              type="button"
               onClick={() => setPage(1)}
               className="w-full mt-4 bg-black text-white rounded-full py-3 font-medium hover:bg-gray-800 transition-colors"
             >
@@ -301,6 +295,7 @@ export default function CategoryPage({ category }: { category: string }) {
                 const name = locale === "ar" ? product.name_ar : product.name_en
                 return (
                   <button
+                    type="button"
                     key={product.id}
                     onClick={() => goToProduct(product)}
                     className="text-left rounded-2xl p-3 hover:shadow-lg transition-shadow duration-200"
@@ -361,6 +356,7 @@ export default function CategoryPage({ category }: { category: string }) {
           {/* Pagination */}
           <div className="flex items-center justify-between mt-10">
             <button
+              type="button"
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page === 1}
               className="flex items-center gap-1 text-sm text-gray-500 disabled:opacity-40 hover:text-black"
@@ -376,6 +372,7 @@ export default function CategoryPage({ category }: { category: string }) {
                   </span>
                 ) : (
                   <button
+                    type="button"
                     key={n}
                     onClick={() => setPage(n)}
                     className={`w-8 h-8 rounded-lg text-sm font-medium ${
@@ -389,6 +386,7 @@ export default function CategoryPage({ category }: { category: string }) {
             </div>
 
             <button
+              type="button"
               onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
               disabled={page === totalPages}
               className="flex items-center gap-1 text-sm text-gray-500 disabled:opacity-40 hover:text-black"
