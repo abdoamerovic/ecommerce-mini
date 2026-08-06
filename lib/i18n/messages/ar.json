@@ -1,0 +1,232 @@
+{
+  "Alert": {
+    "message": "اشترك واحصل على خصم 20% على طلبك الأول",
+    "signUpLink": "اشترك الآن",
+    "close": "X"
+  },
+  "Navbar": {
+    "logo": "SHOP.CO",
+    "shop": "تسوق",
+    "men": "رجال",
+    "women": "نساء",
+    "onSale": "تخفيضات",
+    "newArrive": "وصل حديثاً",
+    "brands": "العلامات التجارية",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "myAccount": "حسابي",
+    "toggleMenu": "فتح القائمة",
+    "openSearch": "فتح البحث"
+  },
+  "form":{
+    "title":"تصفح حسب نمط  الملابس",
+    "casual":"كاجوال",
+    "gym":"رياضي",
+    "formal":"رسمي",
+    "party":"سهرة"
+
+
+  },
+  "Arrivals": {
+    "loading": "جارٍ التحميل...",
+    "title": "وصل حديثاً",
+    "outOfStock": "غير متوفر",
+    "viewMore": "عرض المزيد"
+  },
+  "Boxblack": {
+    "heading": "ابقَ على اطلاع",
+    "headingHighlight": "بأحدث عروضنا",
+    "emailPlaceholder": "⊠ أدخل بريدك الإلكتروني",
+    "subscribe": "اشترك في النشرة الإخبارية"
+  },
+ "ProductDetails": {
+  "selectColors": "اختر اللون",
+  "chooseSize": "اختر المقاس",
+  "addToCart": "أضف إلى السلة",
+  "addedToCart": "تمت الإضافة ✓",
+  "decreaseQuantity": "تقليل الكمية",
+  "increaseQuantity": "زيادة الكمية",
+  "sizes": {
+    "small": "صغير",
+    "medium": "متوسط",
+    "large": "كبير",
+    "xLarge": "كبير جداً"
+  },
+  "tabs": {
+    "productDetails": "تفاصيل المنتج",
+    "ratingReviews": "التقييمات والمراجعات",
+    "faqs": "الأسئلة الشائعة"
+  },
+  "noFaqs": "لا توجد أسئلة شائعة بعد.",
+  "reviewsPlaceholder": "تقييم — قم بربطها بمكوّن التقييمات الخاص بك.",
+  "allReviews": "كل التقييمات",
+  "filterReviews": "فلترة التقييمات",
+  "sortLatest": "الأحدث",
+  "sortOldest": "الأقدم",
+  "sortHighestRating": "الأعلى تقييمًا",
+  "writeReview": "كتابة تقييم",
+  "writeReviewPrompt": "من فضلك اكتب تقييمك:",
+  "reviewThanks": "شكرًا لتقييمك!",
+  "reviewError": "عذرًا، حدث خطأ أثناء حفظ تقييمك. حاول مرة أخرى لاحقًا.",
+  "loadMoreReviews": "عرض المزيد من التقييمات",
+  "moreOptions": "خيارات إضافية"
+},
+  "Footer": {
+    "logo": "SHOP.CO",
+    "tagline": "لدينا ملابس تناسب أسلوبك وتفخر بارتدائها. من النساء إلى الرجال.",
+    "company": {
+      "title": "الشركة",
+      "about": "من نحن",
+      "feature": "المميزات",
+      "works": "أعمالنا",
+      "career": "وظائف"
+    },
+    "help": {
+      "title": "المساعدة",
+      "customerSupport": "دعم العملاء",
+      "deliveryDetails": "تفاصيل التوصيل",
+      "termsConditions": "الشروط والأحكام",
+      "privacyPolicy": "سياسة الخصوصية"
+    },
+    "faq": {
+      "title": "الأسئلة الشائعة",
+      "account": "الحساب",
+      "manageDeliveries": "إدارة التوصيلات",
+      "orders": "الطلبات",
+      "payments": "المدفوعات"
+    },
+    "resources": {
+      "title": "الموارد",
+      "freeEbooks": "كتب إلكترونية مجانية",
+      "devTutorial": "دروس تطوير",
+      "blog": "المدونة - كيفية",
+      "youtube": "قائمة تشغيل يوتيوب"
+    },
+    "copyright": "Shop.co © 2000-2023، جميع الحقوق محفوظة"
+  },
+  "DressStyle": {
+    "title": "تصفح حسب ستايل الملابس",
+    "casual": "كاجوال",
+    "formal": "رسمي",
+    "gym": "رياضي",
+    "party": "سهرة"
+  },
+  "Like": {
+    "title": "قد يعجبك أيضاً",
+    "outOfStock": "غير متوفر"
+  },
+  "Reviews": {
+    "title": "عملاؤنا السعداء",
+    "prevAria": "المراجعة السابقة",
+    "nextAria": "المراجعة التالية"
+  },
+  "Hero": {
+    "title": "اكتشف ملابس تناسب أسلوبك",
+    "description": "تصفح مجموعتنا المتنوعة من الملابس المصممة بعناية لتُبرز شخصيتك وتناسب ذوقك الفريد.",
+    "shopNow": "تسوق الآن",
+    "internationalBrands": "علامة تجارية عالمية",
+    "highQualityProducts": "منتج عالي الجودة",
+    "happyCustomers": "عميل سعيد"
+  },
+  "TopSale": {
+    "loading": "جارٍ التحميل...",
+    "title": "الأكثر مبيعاً",
+    "outOfStock": "غير متوفر",
+    "viewMore": "عرض المزيد"
+  },
+  "Auth": {
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "loginWithGoogle": "تسجيل الدخول عبر جوجل",
+    "loginWithFacebook": "تسجيل الدخول عبر فيسبوك",
+    "noAccount": "ليس لدي حساب",
+    "createNew": "أنشئ حساباً جديداً",
+    "errors": {
+      "fillAllFields": "من فضلك املأ كل الحقول",
+      "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+      "passwordTooShort": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+      "passwordMismatch": "كلمة المرور غير متطابقة"
+    }
+  },
+  "Cart": {
+    "home": "الرئيسية",
+    "category": "الفئة",
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة.",
+    "size": "المقاس",
+    "color": "اللون",
+    "removeItem": "إزالة المنتج",
+    "decreaseQuantity": "تقليل الكمية",
+    "increaseQuantity": "زيادة الكمية",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "الإجمالي الفرعي",
+    "discount": "خصم (-20%)",
+    "deliveryFee": "رسوم التوصيل",
+    "total": "الإجمالي",
+    "couponPlaceholder": "أدخل كود الخصم",
+    "apply": "تطبيق",
+    "checkout": "الذهاب للدفع →"
+  },
+  
+  "logout": "تسجيل الخروج",
+  "Breadcrumb": {
+    "home": "الرئيسية",
+    "shop": "تسوق",
+    "men": "رجال",
+    "women": "نساء"
+  },
+  "CategoryPage": {
+    "filters": "الفلاتر",
+    "price": "السعر",
+    "colors": "الألوان",
+    "size": "المقاس",
+    "dressStyle": "ستايل الملابس",
+    "applyFilter": "تطبيق الفلتر",
+    "sortBy": "ترتيب حسب:",
+    "showing": "عرض {from}-{to} من {total} منتج",
+    "noResults": "لا توجد منتجات تطابق هذه الفلاتر.",
+    "outOfStock": "غير متوفر",
+    "previous": "السابق",
+    "next": "التالي",
+    "types": {
+      "tshirts": "تيشيرتات",
+      "shorts": "شورتات",
+      "shirts": "قمصان",
+      "hoodie": "هوديز",
+      "jeans": "جينز"
+    },
+    "sizes": {
+      "xxSmall": "XX-صغير",
+      "xSmall": "X-صغير",
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير",
+      "xLarge": "X-كبير",
+      "xxLarge": "XX-كبير",
+      "3xLarge": "3X-كبير",
+      "4xLarge": "4X-كبير"
+    },
+    "dressStyles": {
+      "casual": "كاجوال",
+      "formal": "رسمي",
+      "party": "سهرة",
+      "gym": "رياضي",
+      "men": "رجال",
+      "women": "نساء",
+      "shoes": "أحذية",
+      "accessories": "إكسسوارات"
+    },
+    "sortOptions": {
+      "popular": "الأكثر شعبية",
+      "newest": "الأحدث",
+      "priceLow": "السعر: من الأقل للأعلى",
+      "priceHigh": "السعر: من الأعلى للأقل",
+      "rating": "التقييم"
+    }
+  
+  }
+}

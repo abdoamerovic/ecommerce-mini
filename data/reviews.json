@@ -1,0 +1,604 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Ahmed Hassan",
+        "ar": "أحمد حسن"
+      },
+      "review": {
+        "en": "The fabric is soft and premium. Customer service was very helpful too.",
+        "ar": "الخامة ناعمة وفاخرة. وخدمة العملاء كانت متعاونة جدًا."
+      }
+    },
+    {
+      "id": 2,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Sara Mohamed",
+        "ar": "سارة محمد"
+      },
+      "review": {
+        "en": "I really love the quality of the clothes. The size was perfect and the design looks beautiful.",
+        "ar": "أحببت جودة الملابس جدًا. المقاس كان مناسبًا تمامًا والتصميم يبدو جميلًا."
+      }
+    },
+    {
+      "id": 3,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Omar Adel",
+        "ar": "عمر عادل"
+      },
+      "review": {
+        "en": "Good product overall, though delivery took a bit longer than expected.",
+        "ar": "المنتج جيد بشكل عام، لكن التوصيل استغرق وقتًا أطول من المتوقع."
+      }
+    },
+    {
+      "id": 4,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Mona Youssef",
+        "ar": "منى يوسف"
+      },
+      "review": {
+        "en": "Decent quality for the price, but the color was slightly different from the photo.",
+        "ar": "جودة مقبولة بالنسبة للسعر، لكن اللون كان مختلفًا قليلًا عن الصورة."
+      }
+    },
+    {
+      "id": 5,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Khaled Ibrahim",
+        "ar": "خالد إبراهيم"
+      },
+      "review": {
+        "en": "Excellent quality and very fast delivery. The product looks exactly like the pictures.",
+        "ar": "جودة ممتازة وتوصيل سريع جدًا. المنتج يبدو تمامًا مثل الصور."
+      }
+    },
+    {
+      "id": 6,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Nourhan Ali",
+        "ar": "نورهان علي"
+      },
+      "review": {
+        "en": "Amazing shopping experience from start to finish. Will definitely order again.",
+        "ar": "تجربة تسوق رائعة من البداية للنهاية. بالتأكيد هطلب مرة أخرى."
+      }
+    },
+    {
+      "id": 7,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Mostafa Kamal",
+        "ar": "مصطفى كمال"
+      },
+      "review": {
+        "en": "Loved every piece I ordered. True to size and great stitching quality.",
+        "ar": "أحببت كل قطعة طلبتها. المقاس مضبوط وجودة البداية رائعة."
+      }
+    },
+    {
+      "id": 8,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Yasmin Tarek",
+        "ar": "ياسمين طارق"
+      },
+      "review": {
+        "en": "Great value for the price. Packaging was neat and delivery was on time.",
+        "ar": "قيمة ممتازة مقابل السعر. التغليف كان أنيق والتوصيل في الميعاد."
+      }
+    },
+    {
+      "id": 9,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Hassan Fathy",
+        "ar": "حسن فتحي"
+      },
+      "review": {
+        "en": "Impressive quality for the price point. Highly recommend this store.",
+        "ar": "جودة مبهرة بالنسبة للسعر. أنصح بشدة بهذا المتجر."
+      }
+    },
+    {
+      "id": 10,
+      "rating": "⭐⭐",
+      "name": {
+        "en": "Dina Mahmoud",
+        "ar": "دينا محمود"
+      },
+      "review": {
+        "en": "The size chart was misleading and the item didn't fit well.",
+        "ar": "جدول المقاسات كان غير دقيق والمنتج ماكانش مناسب."
+      }
+    },
+    {
+      "id": 11,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Karim Sameh",
+        "ar": "كريم سامح"
+      },
+      "review": {
+        "en": "Average experience. Product is fine but packaging could be improved.",
+        "ar": "تجربة متوسطة. المنتج كويس لكن التغليف ممكن يتحسن."
+      }
+    },
+    {
+      "id": 12,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Aya Nabil",
+        "ar": "آية نبيل"
+      },
+      "review": {
+        "en": "Average experience. Product is fine but packaging could be improved.",
+        "ar": "تجربة متوسطة. المنتج كويس لكن التغليف ممكن يتحسن."
+      }
+    },
+    {
+      "id": 13,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Mahmoud Saeed",
+        "ar": "محمود سعيد"
+      },
+      "review": {
+        "en": "Average experience. Product is fine but packaging could be improved.",
+        "ar": "تجربة متوسطة. المنتج كويس لكن التغليف ممكن يتحسن."
+      }
+    },
+    {
+      "id": 14,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Rania Gamal",
+        "ar": "رانيا جمال"
+      },
+      "review": {
+        "en": "Fast shipping and the item matched the description perfectly.",
+        "ar": "شحن سريع والمنتج مطابق تمامًا للوصف."
+      }
+    },
+    {
+      "id": 15,
+      "rating": "⭐⭐",
+      "name": {
+        "en": "Tarek Fouad",
+        "ar": "طارق فؤاد"
+      },
+      "review": {
+        "en": "The product was okay but not as expected. Delivery was delayed by a few days.",
+        "ar": "المنتج كان كويس لكن مش زي المتوقع. التوصيل اتأخر كام يوم."
+      }
+    },
+    {
+      "id": 16,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Heba Ashraf",
+        "ar": "هبة أشرف"
+      },
+      "review": {
+        "en": "Impressive quality for the price point. Highly recommend this store.",
+        "ar": "جودة مبهرة بالنسبة للسعر. أنصح بشدة بهذا المتجر."
+      }
+    },
+    {
+      "id": 17,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Amr Sabry",
+        "ar": "عمرو صبري"
+      },
+      "review": {
+        "en": "Reasonable quality, matches most of the description.",
+        "ar": "جودة معقولة، مطابقة لمعظم تفاصيل الوصف."
+      }
+    },
+    {
+      "id": 18,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Salma Ezzat",
+        "ar": "سلمى عزت"
+      },
+      "review": {
+        "en": "The outfit fits perfectly and feels premium. Will be ordering more soon.",
+        "ar": "الطقم مقاسه مناسب تمامًا ويبدو فاخرًا. هطلب المزيد قريبًا."
+      }
+    },
+    {
+      "id": 19,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Ibrahim Nasser",
+        "ar": "إبراهيم ناصر"
+      },
+      "review": {
+        "en": "Average experience. Product is fine but packaging could be improved.",
+        "ar": "تجربة متوسطة. المنتج كويس لكن التغليف ممكن يتحسن."
+      }
+    },
+    {
+      "id": 20,
+      "rating": "⭐⭐",
+      "name": {
+        "en": "Mariam Adel",
+        "ar": "مريم عادل"
+      },
+      "review": {
+        "en": "The size chart was misleading and the item didn't fit well.",
+        "ar": "جدول المقاسات كان غير دقيق والمنتج ماكانش مناسب."
+      }
+    },
+    {
+      "id": 21,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Youssef Ramadan",
+        "ar": "يوسف رمضان"
+      },
+      "review": {
+        "en": "Great value for the price. Packaging was neat and delivery was on time.",
+        "ar": "قيمة ممتازة مقابل السعر. التغليف كان أنيق والتوصيل في الميعاد."
+      }
+    },
+    {
+      "id": 22,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Nada Hisham",
+        "ar": "ندى هشام"
+      },
+      "review": {
+        "en": "Good product overall, though delivery took a bit longer than expected.",
+        "ar": "المنتج جيد بشكل عام، لكن التوصيل استغرق وقتًا أطول من المتوقع."
+      }
+    },
+    {
+      "id": 23,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Sherif Magdy",
+        "ar": "شريف مجدي"
+      },
+      "review": {
+        "en": "Excellent quality and very fast delivery. The product looks exactly like the pictures.",
+        "ar": "جودة ممتازة وتوصيل سريع جدًا. المنتج يبدو تمامًا مثل الصور."
+      }
+    },
+    {
+      "id": 24,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Reem Khaled",
+        "ar": "ريم خالد"
+      },
+      "review": {
+        "en": "It's okay, does the job, though I expected slightly better stitching.",
+        "ar": "كويس، بيأدي الغرض، لكن كنت متوقع خياطة أفضل شوية."
+      }
+    },
+    {
+      "id": 25,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Ali Mostafa",
+        "ar": "علي مصطفى"
+      },
+      "review": {
+        "en": "The outfit fits perfectly and feels premium. Will be ordering more soon.",
+        "ar": "الطقم مقاسه مناسب تمامًا ويبدو فاخرًا. هطلب المزيد قريبًا."
+      }
+    },
+    {
+      "id": 26,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Farida Osman",
+        "ar": "فريدة عثمان"
+      },
+      "review": {
+        "en": "Reasonable quality, matches most of the description.",
+        "ar": "جودة معقولة، مطابقة لمعظم تفاصيل الوصف."
+      }
+    },
+    {
+      "id": 27,
+      "rating": "⭐⭐",
+      "name": {
+        "en": "Mohamed Salah",
+        "ar": "محمد صلاح"
+      },
+      "review": {
+        "en": "The size chart was misleading and the item didn't fit well.",
+        "ar": "جدول المقاسات كان غير دقيق والمنتج ماكانش مناسب."
+      }
+    },
+    {
+      "id": 28,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Lobna Adel",
+        "ar": "لبنى عادل"
+      },
+      "review": {
+        "en": "Decent quality for the price, but the color was slightly different from the photo.",
+        "ar": "جودة مقبولة بالنسبة للسعر، لكن اللون كان مختلفًا قليلًا عن الصورة."
+      }
+    },
+    {
+      "id": 29,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Hany Zaki",
+        "ar": "هاني زكي"
+      },
+      "review": {
+        "en": "Fast shipping and the item matched the description perfectly.",
+        "ar": "شحن سريع والمنتج مطابق تمامًا للوصف."
+      }
+    },
+    {
+      "id": 30,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Doaa Wael",
+        "ar": "دعاء وائل"
+      },
+      "review": {
+        "en": "Great value for the price. Packaging was neat and delivery was on time.",
+        "ar": "قيمة ممتازة مقابل السعر. التغليف كان أنيق والتوصيل في الميعاد."
+      }
+    },
+    {
+      "id": 31,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Waleed Amin",
+        "ar": "وليد أمين"
+      },
+      "review": {
+        "en": "Excellent quality and very fast delivery. The product looks exactly like the pictures.",
+        "ar": "جودة ممتازة وتوصيل سريع جدًا. المنتج يبدو تمامًا مثل الصور."
+      }
+    },
+    {
+      "id": 32,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Shaimaa Nasr",
+        "ar": "شيماء نصر"
+      },
+      "review": {
+        "en": "Loved every piece I ordered. True to size and great stitching quality.",
+        "ar": "أحببت كل قطعة طلبتها. المقاس مضبوط وجودة الخياطة رائعة."
+      }
+    },
+    {
+      "id": 33,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Ahmed Fawzy",
+        "ar": "أحمد فوزي"
+      },
+      "review": {
+        "en": "Good enough for the price, but not exceptional.",
+        "ar": "كويس بالنسبة للسعر، لكن مش استثنائي."
+      }
+    },
+    {
+      "id": 34,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Nesma Gaber",
+        "ar": "نسمة جابر"
+      },
+      "review": {
+        "en": "Good product overall, though delivery took a bit longer than expected.",
+        "ar": "المنتج جيد بشكل عام، لكن التوصيل استغرق وقتًا أطول من المتوقع."
+      }
+    },
+    {
+      "id": 35,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Tamer Hosny2",
+        "ar": "تامر حسني"
+      },
+      "review": {
+        "en": "Loved every piece I ordered. True to size and great stitching quality.",
+        "ar": "أحببت كل قطعة طلبتها. المقاس مضبوط وجودة الخياطة رائعة."
+      }
+    },
+    {
+      "id": 36,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Ghada Samir",
+        "ar": "غادة سمير"
+      },
+      "review": {
+        "en": "Amazing shopping experience from start to finish. Will definitely order again.",
+        "ar": "تجربة تسوق رائعة من البداية للنهاية. بالتأكيد هطلب مرة أخرى."
+      }
+    },
+    {
+      "id": 37,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Islam Bahaa",
+        "ar": "إسلام بهاء"
+      },
+      "review": {
+        "en": "Amazing shopping experience from start to finish. Will definitely order again.",
+        "ar": "تجربة تسوق رائعة من البداية للنهاية. بالتأكيد هطلب مرة أخرى."
+      }
+    },
+    {
+      "id": 38,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Marwa Adel",
+        "ar": "مروة عادل"
+      },
+      "review": {
+        "en": "The outfit fits perfectly and feels premium. Will be ordering more soon.",
+        "ar": "الطقم مقاسه مناسب تمامًا ويبدو فاخرًا. هطلب المزيد قريبًا."
+      }
+    },
+    {
+      "id": 39,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Sameh Farag",
+        "ar": "سامح فرج"
+      },
+      "review": {
+        "en": "Fast shipping and the item matched the description perfectly.",
+        "ar": "شحن سريع والمنتج مطابق تمامًا للوصف."
+      }
+    },
+    {
+      "id": 40,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Eman Tolba",
+        "ar": "إيمان طلبة"
+      },
+      "review": {
+        "en": "Average experience. Product is fine but packaging could be improved.",
+        "ar": "تجربة متوسطة. المنتج كويس لكن التغليف ممكن يتحسن."
+      }
+    },
+    {
+      "id": 41,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Adham Kassem",
+        "ar": "أدهم قاسم"
+      },
+      "review": {
+        "en": "The item is nice but sizing runs a little small. Order one size up.",
+        "ar": "المنتج جميل لكن المقاس صغير شوية. يفضل تطلب مقاس أكبر."
+      }
+    },
+    {
+      "id": 42,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Yara Shawky",
+        "ar": "يارا شوقي"
+      },
+      "review": {
+        "en": "Fast shipping and the item matched the description perfectly.",
+        "ar": "شحن سريع والمنتج مطابق تمامًا للوصف."
+      }
+    },
+    {
+      "id": 43,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Bassem Elsayed",
+        "ar": "باسم السيد"
+      },
+      "review": {
+        "en": "The material is comfortable and the color is beautiful. Everything arrived safely.",
+        "ar": "الخامة مريحة واللون جميل. كل شيء وصل بأمان."
+      }
+    },
+    {
+      "id": 44,
+      "rating": "⭐⭐",
+      "name": {
+        "en": "Fatma Nour",
+        "ar": "فاطمة نور"
+      },
+      "review": {
+        "en": "The product was okay but not as expected. Delivery was delayed by a few days.",
+        "ar": "المنتج كان كويس لكن مش زي المتوقع. التوصيل اتأخر كام يوم."
+      }
+    },
+    {
+      "id": 45,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Ziad Hegazy",
+        "ar": "زياد حجازي"
+      },
+      "review": {
+        "en": "The item is nice but sizing runs a little small. Order one size up.",
+        "ar": "المنتج جميل لكن المقاس صغير شوية. يفضل تطلب مقاس أكبر."
+      }
+    },
+    {
+      "id": 46,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Rowan Adel",
+        "ar": "روان عادل"
+      },
+      "review": {
+        "en": "Reasonable quality, matches most of the description.",
+        "ar": "جودة معقولة، مطابقة لمعظم تفاصيل الوصف."
+      }
+    },
+    {
+      "id": 47,
+      "rating": "⭐⭐⭐⭐",
+      "name": {
+        "en": "Osama Farid",
+        "ar": "أسامة فريد"
+      },
+      "review": {
+        "en": "Good enough for the price, but not exceptional.",
+        "ar": "كويس بالنسبة للسعر، لكن مش استثنائي."
+      }
+    },
+    {
+      "id": 48,
+      "rating": "⭐⭐⭐",
+      "name": {
+        "en": "Nourhan Sayed",
+        "ar": "نورهان سيد"
+      },
+      "review": {
+        "en": "Good product overall, though delivery took a bit longer than expected.",
+        "ar": "المنتج جيد بشكل عام، لكن التوصيل استغرق وقتًا أطول من المتوقع."
+      }
+    },
+    {
+      "id": 49,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Kareem Adel",
+        "ar": "كريم عادل"
+      },
+      "review": {
+        "en": "Excellent quality and very fast delivery. The product looks exactly like the pictures.",
+        "ar": "جودة ممتازة وتوصيل سريع جدًا. المنتج يبدو تمامًا مثل الصور."
+      }
+    },
+    {
+      "id": 50,
+      "rating": "⭐⭐⭐⭐⭐",
+      "name": {
+        "en": "Menna Hassan",
+        "ar": "منة حسن"
+      },
+      "review": {
+        "en": "The outfit fits perfectly and feels premium. Will be ordering more soon.",
+        "ar": "الطقم مقاسه مناسب تمامًا ويبدو فاخرًا. هطلب المزيد قريبًا."
+      }
+    }
+  ]
+}

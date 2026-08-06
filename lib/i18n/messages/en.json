@@ -1,0 +1,209 @@
+{
+  "Alert": {
+    "message": "Sign up and get 20% of your first order",
+    "signUpLink": "sign up now",
+    "close": "X"
+  },
+  "Navbar": {
+    "logo": "SHOP.CO",
+    "shop": "Shop",
+    "men": "Men",
+    "women": "Women",
+    "onSale": "On sale",
+    "newArrive": "New arrive",
+    "brands": "Brands",
+    "searchPlaceholder": "Search for products...",
+    "myAccount": "My Account",
+    "toggleMenu": "Toggle menu",
+    "openSearch": "Open search"
+  },
+  "form": {
+    "title": " BROWSE BY DRESS STYLE  ",
+    "casual": "casual",
+    "gym": "gym",
+    "formal": "formal",
+    "party": "party"
+  },
+  "logout": "Logout",
+  "Arrivals": {
+    "loading": "Loading...",
+    "title": "New Arrivals",
+    "outOfStock": "Out of Stock",
+    "viewMore": "View More"
+  },
+  "Boxblack": {
+    "heading": "STAY up to DATE ABOUT",
+    "headingHighlight": "OUR LATEST OFFERS",
+    "emailPlaceholder": "⊠ Enter your email address",
+    "subscribe": "Subscribe to Newsletter"
+  },
+  "ProductDetails": {
+  "selectColors": "Select Colors",
+  "chooseSize": "Choose Size",
+  "addToCart": "Add to Cart",
+  "addedToCart": "Added ✓",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity",
+  "sizes": {
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "xLarge": "X-Large"
+  },
+  "tabs": {
+    "productDetails": "Product Details",
+    "ratingReviews": "Rating & Reviews",
+    "faqs": "FAQs"
+  },
+  "noFaqs": "No FAQs added yet.",
+  "reviewsPlaceholder": "Reviews — wire this up to your reviews component.",
+  "allReviews": "All reviews",
+  "filterReviews": "Filter reviews",
+  "sortLatest": "Latest",
+  "sortOldest": "Oldest",
+  "sortHighestRating": "Highest rating",
+  "writeReview": "Write review",
+  "writeReviewPrompt": "Please write your review:",
+  "reviewThanks": "Thank you for your review!",
+  "reviewError": "Sorry, there was an error saving your review. Please try again later.",
+  "loadMoreReviews": "Load More Reviews",
+  "moreOptions": "More options"
+},
+  "Footer": {
+    "logo": "SHOP.CO",
+    "tagline": "We have clothes that suits your style and which you're proud to wear. From women to men.",
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "feature": "Feature",
+      "works": "Works",
+      "career": "Career"
+    },
+    "help": {
+      "title": "Help",
+      "customerSupport": "Customer Support",
+      "deliveryDetails": "Delivery Details",
+      "termsConditions": "Terms & Conditions",
+      "privacyPolicy": "Privacy Policy"
+    },
+    "faq": {
+      "title": "FAQ",
+      "account": "Account",
+      "manageDeliveries": "Manage Deliveries",
+      "orders": "Orders",
+      "payments": "Payments"
+    },
+    "resources": {
+      "title": "Resources",
+      "freeEbooks": "Free eBooks",
+      "devTutorial": "Development Tutorial",
+      "blog": "How to - Blog",
+      "youtube": "Youtube Playlist"
+    },
+    "copyright": "Shop.co © 2000-2023, All Rights Reserved"
+  },
+  "DressStyle": {
+    "title": "BROWSE BY DRESS STYLE",
+    "casual": "Casual",
+    "formal": "Formal",
+    "gym": "Gym",
+    "party": "Party"
+  },
+  "Like": {
+    "title": "YOU MIGHT ALSO LIKE",
+    "outOfStock": "Out of Stock"
+  },
+  "Reviews": {
+    "title": "OUR HAPPY CUSTOMERS",
+    "prevAria": "Previous review",
+    "nextAria": "Next review"
+  },
+  "Hero": {
+    "title": "FIND CLOTHES THAT MATCH YOUR STYLE",
+    "description": "Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your unique sense of style.",
+    "shopNow": "Shop Now",
+    "internationalBrands": "International Brands",
+    "highQualityProducts": "High-Quality Products",
+    "happyCustomers": "Happy Customers"
+  },
+  "TopSale": {
+    "loading": "Loading...",
+    "title": "top selling",
+    "outOfStock": "Out of Stock",
+    "viewMore": "View More"
+  },
+  "Auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "login": "Login",
+    "signup": "Sign Up",
+    "loginWithGoogle": "Login using google",
+    "loginWithFacebook": "Login using facebook",
+    "noAccount": "i don't have an account",
+    "createNew": "create new",
+    "errors": {
+      "fillAllFields": "Please fill in all fields",
+      "invalidCredentials": "Incorrect email or password",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordMismatch": "Passwords do not match"
+    }
+  },
+  "Breadcrumb": {
+    "home": "Home",
+    "shop": "Shop",
+    "men": "Men",
+    "women": "Women"
+  },
+  "CategoryPage": {
+    "filters": "Filters",
+    "price": "Price",
+    "colors": "Colors",
+    "size": "Size",
+    "dressStyle": "Dress Style",
+    "applyFilter": "Apply Filter",
+    "sortBy": "Sort by:",
+    "showing": "Showing {from}-{to} of {total} Products",
+    "noResults": "No products match these filters.",
+    "outOfStock": "Out of Stock",
+    "previous": "Previous",
+    "next": "Next",
+    "types": {
+      "tshirts": "T-shirts",
+      "shorts": "Shorts",
+      "shirts": "Shirts",
+      "hoodie": "Hoodie",
+      "jeans": "Jeans"
+    },
+    "sizes": {
+      "xxSmall": "XX-Small",
+      "xSmall": "X-Small",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large",
+      "xLarge": "X-Large",
+      "xxLarge": "XX-Large",
+      "3xLarge": "3X-Large",
+      "4xLarge": "4X-Large"
+    },
+    "dressStyles": {
+      "casual": "Casual",
+      "formal": "Formal",
+      "party": "Party",
+      "gym": "Gym",
+      "men": "Men",
+      "women": "Women",
+      "shoes": "Shoes",
+      "accessories": "Accessories"
+    },
+    "sortOptions": {
+      "popular": "Most Popular",
+      "newest": "Newest",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low",
+      "rating": "Rating"
+    }
+  }
+}
