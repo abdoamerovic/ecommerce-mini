@@ -1,68 +1,59 @@
+
+
 "use client"
 
 import Image from "next/image"
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 
+// Full class names are written out so Tailwind can see them. The old `ratio: "1 / 1"`
+// was dropped into className as-is, which is not a valid class and did nothing.
+const PHOTOS = [
+  { id: 1, src: "/images/form/casul.png", alt: "casual", ratio: "aspect-square", span: "md:col-span-1" },
+  { id: 2, src: "/images/form/formal.png", alt: "formal", ratio: "aspect-[2/1]", span: "md:col-span-2" },
+  { id: 3, src: "/images/form/gym.png", alt: "gym", ratio: "aspect-[2/1]", span: "md:col-span-2" },
+  { id: 4, src: "/images/form/party.png", alt: "party", ratio: "aspect-square", span: "md:col-span-1" },
+] as const
+
 export default function Form() {
   const t = useTranslations("form")
   const locale = useLocale()
 
-  const photos = [
-    { id: 1, src: "/images/form/casul.png", alt: "casual", ratio: "1 / 1" },
-    { id: 2, src: "/images/form/formal.png", alt: "formal", ratio: "2 / 1" },
-    { id: 3, src: "/images/form/gym.png", alt: "gym", ratio: "2 / 1" },
-    { id: 4, src: "/images/form/party.png", alt: "party", ratio: "1 / 1" },
-  ]
-
-  const areas = ["one", "two", "three", "four"]
-
+  // It was a <form> with no inputs and fixed w-280 (1120px) that overflowed every screen below ~1150px
   return (
-    <div className="flex justify-center">
-      <form className="w-280 h-auto md:h-196.5 bg-[#F0F0F0] p-8 rounded-2xl">
-        <h1 className="text-[45px] font-bold text-black mb-8 text-center font-sans">
+    <section className="px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-280 rounded-2xl bg-[#F0F0F0] p-5 sm:p-8">
+        <h2 className="mb-6 text-center font-sans text-3xl font-bold text-black sm:mb-8 sm:text-4xl md:text-[45px]">
           {t("title")}
-        </h1>
+        </h2>
 
-        <div
-          className="flex flex-col gap-4 md:grid"
-          style={{
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gridTemplateRows: "repeat(2, 298px)",
-            gridTemplateAreas: `
-              "one two two"
-              "three three four"
-            `,
-          }}
-        >
-          {photos.map((imag, i) => (
+        {/* 1 column on mobile; on md+ a 3-column grid: [1][2 2] / [3 3][4] */}
+        <div className="grid grid-cols-1 gap-4 md:auto-rows-55 md:grid-cols-3 lg:auto-rows-74.5">
+          {PHOTOS.map((photo) => (
             <div
-              key={imag.id}
-              style={{ gridArea: areas[i] }}
-              className={`relative overflow-hidden rounded-lg ${imag.ratio} md:aspect-auto md:h-full`}
+              key={photo.id}
+              className={`relative overflow-hidden rounded-lg ${photo.ratio} ${photo.span} md:aspect-auto md:h-full`}
             >
-              <Link
-                href={`/${locale}/Product/${imag.alt.toLowerCase()}`}
-                className="block relative w-full h-full"
-              >
+              {/* These pointed at /Product/<style> (a product page without an id). The category page handles dress styles. */}
+              <Link href={`/${locale}/Category/${photo.alt}`} className="relative block h-full w-full">
                 <Image
-                  src={imag.src}
-                  alt={imag.alt}
+                  src={photo.src}
+                  alt={t(photo.alt)}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-center"
                 />
 
-                <div className="absolute top-0 left-0 p-4 md:p-6">
-                  <p className="text-black text-lg md:text-xl font-semibold capitalize bg-white/70 px-3 py-1 rounded-md">
-                    {t(imag.alt)}
+                <div className="absolute inset-s-0 top-0 p-3 md:p-6">
+                  <p className="rounded-md bg-white/70 px-3 py-1 text-base font-semibold capitalize text-black md:text-xl">
+                    {t(photo.alt)}
                   </p>
                 </div>
               </Link>
             </div>
           ))}
         </div>
-      </form>
-    </div>
+      </div>
+    </section>
   )
 }

@@ -1,10 +1,13 @@
+// Place this file at: components/Like.tsx
+
 "use client"
 
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 import Image from "next/image"
 import { Star } from "lucide-react"
 import { useTranslations, useLocale } from "next-intl"
 import productsData from "@/data/products.json"
+import { getProductHref, normalizeCategory } from "@/lib/productRoute"
 
 type Product = {
   id: string
@@ -21,6 +24,8 @@ type Product = {
 }
 
 const DEFAULT_IMAGE = "/images/default-product.jpg"
+const MAX_ITEMS = 4
+const ALL_PRODUCTS = productsData as Product[]
 
 export default function Like({
   category,
@@ -29,45 +34,37 @@ export default function Like({
   category?: string
   excludeId?: string
 } = {}) {
-  const router = useRouter()
   const t = useTranslations("Like")
   const rawLocale = useLocale()
   const locale = rawLocale === "ar" ? "ar" : "en"
 
-  const allProducts = productsData as Product[]
+  // The current product must never suggest itself (the old fallback ignored excludeId)
+  const candidates = ALL_PRODUCTS.filter((p) => p.id !== excludeId)
 
-  const filtered = allProducts.filter((p) => {
-    if (excludeId && p.id === excludeId) return false
-    if (category && p.category !== category) return false
-    return true
-  })
+  // "man"/"woman" (route names) now match "men"/"women" (data names)
+  const wanted = category ? normalizeCategory(category) : null
+  const sameCategory = wanted ? candidates.filter((p) => normalizeCategory(p.category) === wanted) : candidates
 
-  const visibleProducts = (filtered.length > 0 ? filtered : allProducts).slice(0, 4)
+  const visibleProducts = (sameCategory.length > 0 ? sameCategory : candidates).slice(0, MAX_ITEMS)
 
-  function goToProduct(product: Product) {
-    if (product.category === "men") {
-      router.push(`/${locale}/Category/man?id=${product.id}`)
-    } else if (product.category === "women") {
-      router.push(`/${locale}/Category/woman?id=${product.id}`)
-    }
-  }
+  if (visibleProducts.length === 0) return null
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
-      <h2 className="text-2xl font-extrabold text-center mb-6 text-[48px]">
-        {t("title")}
-      </h2>
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <h2 className="mb-8 text-center text-3xl font-extrabold sm:text-4xl md:text-5xl">{t("title")}</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
         {visibleProducts.map((product) => {
           const name = locale === "ar" ? product.name_ar : product.name_en
+          const discount = product.discount ?? 0
+
           return (
-            <button
+            <Link
               key={product.id}
-              onClick={() => goToProduct(product)}
-              className="text-left rounded-2xl p-3 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+              href={getProductHref(locale, product)}
+              className="block rounded-2xl p-2 text-start transition-shadow duration-200 hover:shadow-lg sm:p-3"
             >
-              <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100">
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-gray-100">
                 <Image
                   src={product.image || DEFAULT_IMAGE}
                   alt={name}
@@ -77,42 +74,44 @@ export default function Like({
                 />
 
                 {product.inStock === false && (
-                  <span className="absolute top-2 right-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full">
+                  <span className="absolute inset-e-2 top-2 rounded-full bg-gray-800 px-2 py-1 text-xs text-white">
                     {t("outOfStock")}
                   </span>
                 )}
 
-                {!!product.discount && product.discount > 0 && (
-                  <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                    -{product.discount}%
+                {discount > 0 && (
+                  <span className="absolute inset-s-2 top-2 rounded-full bg-red-500 px-2 py-1 text-xs text-white">
+                    -{discount}%
                   </span>
                 )}
               </div>
 
-              <h3 className="mt-3 font-semibold text-sm">{name}</h3>
+              <h3 className="mt-3 line-clamp-2 text-sm font-semibold">{name}</h3>
 
-              <div className="flex items-center gap-1 mt-1">
+              <div className="mt-1 flex flex-wrap items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
                     key={i}
                     size={14}
                     className={
-                      i < Math.round(product.rating ?? 0) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                      i < Math.round(product.rating ?? 0)
+                        ? "fill-yellow-400 text-yellow-400"
+                        : "text-gray-300"
                     }
                   />
                 ))}
-                <span className="text-xs text-gray-500 ml-1">
+                <span className="ms-1 text-xs text-gray-500">
                   {product.rating ?? 0} ({product.reviews ?? 0})
                 </span>
               </div>
 
-              <div className="flex items-center gap-2 mt-2">
+              <div className="mt-2 flex flex-wrap items-center gap-x-2">
                 <span className="font-bold">${product.price}</span>
                 {product.oldPrice ? (
-                  <span className="text-gray-400 line-through text-sm">${product.oldPrice}</span>
+                  <span className="text-sm text-gray-400 line-through">${product.oldPrice}</span>
                 ) : null}
               </div>
-            </button>
+            </Link>
           )
         })}
       </div>

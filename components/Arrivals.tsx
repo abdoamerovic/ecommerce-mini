@@ -2,93 +2,47 @@
 
 "use client"
 
-import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useState } from "react"
+import Link from "next/link"
 import Image from "next/image"
 import { Star } from "lucide-react"
 import { useTranslations, useLocale } from "next-intl"
-import localProducts from "@/data/products.json"
-
-type Product = {
-  id: string
-  name_en: string
-  name_ar: string
-  category: string
-  image: string
-  price: number
-  oldPrice: number | null
-  discount: number
-  rating: number
-  reviews: number
-  inStock: boolean
-}
+import { useShuffledProducts, type ListProduct } from "@/lib/useProducts"
+import { getProductHref } from "@/lib/productRoute"
 
 const DEFAULT_IMAGE = "/images/default-product.jpg"
-
-function getRandomProducts(all: Product[], count: number): Product[] {
-  const shuffled = [...all].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, count)
-}
+const INITIAL_COUNT = 4
+const EXPANDED_COUNT = 12
 
 export default function Arrivals() {
-  const router = useRouter()
   const locale = useLocale()
   const t = useTranslations("Arrivals")
 
-  const [allProducts, setAllProducts] = useState<Product[]>([])
-  const [visibleProducts, setVisibleProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
+  const { products, loading } = useShuffledProducts()
+  const [expanded, setExpanded] = useState(false)
 
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const res = await fetch("/api/products")
-        if (!res.ok) throw new Error("API response not ok")
+  const visibleProducts = products.slice(0, expanded ? EXPANDED_COUNT : INITIAL_COUNT)
+  const canExpand = !expanded && products.length > INITIAL_COUNT
 
-        const data: Product[] = await res.json()
-        setAllProducts(data)
-        setVisibleProducts(getRandomProducts(data, 4))
-      } catch (error) {
-        console.warn("API failed, using local data instead:", error)
-        setAllProducts(localProducts as Product[])
-        setVisibleProducts(getRandomProducts(localProducts as Product[], 4))
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadProducts()
-  }, [])
-
-  function handleViewMore() {
-    setVisibleProducts(getRandomProducts(allProducts, 12))
-  }
-
-  function goToProduct(product: Product) {
-    if (product.category === "men") {
-      router.push(`/${locale}/Category/man?id=${product.id}`)
-    } else if (product.category === "women") {
-      router.push(`/${locale}/Category/woman?id=${product.id}`)
-    }
-  }
-
-  function getProductName(product: Product) {
+  function getProductName(product: ListProduct) {
     return locale === "ar" ? product.name_ar : product.name_en
   }
 
+  const heading = (
+    <h2 className="mb-8 text-center text-3xl font-extrabold sm:text-4xl md:text-5xl">{t("title")}</h2>
+  )
+
   if (loading) {
     return (
-      <section className="max-w-6xl mx-auto px-6 py-10" id="cards">
-        <h2 className="text-2xl font-extrabold text-center mb-6 text-[48px]">
-          {t("title")}
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {Array.from({ length: 4 }).map((_, i) => (
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6" id="cards">
+        {heading}
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
+          {Array.from({ length: INITIAL_COUNT }).map((_, i) => (
             <div key={i} className="rounded-2xl p-3">
-              <div className="w-full aspect-square rounded-xl bg-gray-200 animate-pulse" />
-              <div className="mt-3 h-4 bg-gray-200 rounded animate-pulse" />
-              <div className="mt-2 h-3 w-2/3 bg-gray-200 rounded animate-pulse" />
-              <div className="mt-2 h-4 w-1/3 bg-gray-200 rounded animate-pulse" />
+              <div className="aspect-square w-full animate-pulse rounded-xl bg-gray-200" />
+              <div className="mt-3 h-4 animate-pulse rounded bg-gray-200" />
+              <div className="mt-2 h-3 w-2/3 animate-pulse rounded bg-gray-200" />
+              <div className="mt-2 h-4 w-1/3 animate-pulse rounded bg-gray-200" />
             </div>
           ))}
         </div>
@@ -97,19 +51,17 @@ export default function Arrivals() {
   }
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-10" id="cards">
-      <h2 className="text-2xl font-extrabold text-center mb-6 text-[48px]">
-        {t("title")}
-      </h2>
+    <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6" id="cards">
+      {heading}
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
         {visibleProducts.map((product) => (
-          <button
+          <Link
             key={product.id}
-            onClick={() => goToProduct(product)}
-            className="text-left rounded-2xl p-3 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+            href={getProductHref(locale, product)}
+            className="block w-full rounded-2xl p-2 text-start transition-shadow duration-200 hover:shadow-lg sm:p-3"
           >
-            <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-gray-100">
               <Image
                 src={product.image || DEFAULT_IMAGE}
                 alt={getProductName(product)}
@@ -119,21 +71,21 @@ export default function Arrivals() {
               />
 
               {!product.inStock && (
-                <span className="absolute top-2 right-2 bg-gray-800 text-white text-xs px-2 py-1 rounded-full">
+                <span className="absolute inset-e-2 top-2 rounded-full bg-gray-800 px-2 py-1 text-xs text-white">
                   {t("outOfStock")}
                 </span>
               )}
 
               {product.discount > 0 && (
-                <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                <span className="absolute inset-s-2 top-2 rounded-full bg-red-500 px-2 py-1 text-xs text-white">
                   -{product.discount}%
                 </span>
               )}
             </div>
 
-            <h3 className="mt-3 font-semibold text-sm">{getProductName(product)}</h3>
+            <h3 className="mt-3 line-clamp-2 text-sm font-semibold">{getProductName(product)}</h3>
 
-            <div className="flex items-center gap-1 mt-1">
+            <div className="mt-1 flex flex-wrap items-center gap-1">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
@@ -145,31 +97,32 @@ export default function Arrivals() {
                   }
                 />
               ))}
-              <span className="text-xs text-gray-500 ml-1">
+              <span className="ms-1 text-xs text-gray-500">
                 {product.rating} ({product.reviews})
               </span>
             </div>
 
-            <div className="flex items-center gap-2 mt-2">
+            <div className="mt-2 flex flex-wrap items-center gap-x-2">
               <span className="font-bold">${product.price}</span>
-              {product.oldPrice && (
-                <span className="text-gray-400 line-through text-sm">
-                  ${product.oldPrice}
-                </span>
-              )}
+              {product.oldPrice ? (
+                <span className="text-sm text-gray-400 line-through">${product.oldPrice}</span>
+              ) : null}
             </div>
-          </button>
+          </Link>
         ))}
       </div>
 
-      <div className="flex justify-center mt-8">
-        <button
-          onClick={handleViewMore}
-          className="border rounded-full px-8 py-3 hover:bg-black hover:text-white transition-colors"
-        >
-          {t("viewMore")}
-        </button>
-      </div>
+      {canExpand && (
+        <div className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            className="rounded-full border px-8 py-3 transition-colors hover:bg-black hover:text-white"
+          >
+            {t("viewMore")}
+          </button>
+        </div>
+      )}
     </section>
   )
 }

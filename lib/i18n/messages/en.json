@@ -132,6 +132,12 @@
     "outOfStock": "Out of Stock",
     "viewMore": "View More"
   },
+  "HomeMeta": {
+  "siteName": "Your Store Name",
+  "title": "Your Store Name | Men's & Women's Fashion, New Arrivals & Sale",
+  "description": "Shop men's and women's clothing from top brands. Discover new arrivals, top sale deals and fast delivery.",
+  "brandsHeading": "Brands we carry"
+},
   "Auth": {
     "email": "Email",
     "logout": "Logout",

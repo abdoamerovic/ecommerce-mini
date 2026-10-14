@@ -2,83 +2,87 @@
 
 "use client"
 
+import { Fragment } from "react"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
-
+import { useTranslations, useLocale } from "next-intl"
 
 export default function Start() {
   const t = useTranslations("Hero")
-  const internationalBrands = 200
-  const highQualityProducts = 2000
-  const happyCustomers = 30000
- const goto = () => {
-  document.querySelector("#cards")?.scrollIntoView({
-    behavior: "smooth",
-  })
-}
+  const locale = useLocale()
+
+  // toLocaleString() with no locale formats differently on the server and in the browser
+  // (e.g. "30,000" vs "٣٠٬٠٠٠"), which caused hydration warnings. Pass the page locale explicitly.
+  const formatNumber = new Intl.NumberFormat(locale)
+
+  const stats = [
+    { value: 200, label: t("internationalBrands") },
+    { value: 2000, label: t("highQualityProducts") },
+    { value: 30000, label: t("happyCustomers") },
+  ]
+
+  const handleShopNow = () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    document.querySelector("#cards")?.scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+    })
+  }
 
   return (
     <section className="bg-[#f2f0f1]">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 min-h-175 flex flex-col lg:flex-row items-center justify-between gap-8 py-14 lg:py-20">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-4 py-10 sm:px-6 lg:min-h-175 lg:flex-row lg:px-8 lg:py-20">
+        <div className="flex-1 lg:-mt-8">
+          <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">{t("title")}</h1>
 
-        <div className="flex-1 -mt-8">
-          <h1 className="text-5xl md:text-6xl lg:text-6xl font-black leading-tight">
-            {t("title")}
-          </h1>
-
-          <p className="mt-6 text-gray-600 text-lg leading-8 max-w-lg">
+          <p className="mt-6 max-w-lg text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
             {t("description")}
           </p>
 
-          <button onClick={goto} className="mt-8 bg-black text-white px-10 py-4 rounded-full font-medium hover:bg-gray-800 transition duration-300">
+          <button
+            type="button"
+            onClick={handleShopNow}
+            className="mt-8 w-full rounded-full bg-black px-10 py-4 font-medium text-white transition duration-300 hover:bg-gray-800 sm:w-auto"
+          >
             {t("shopNow")}
           </button>
 
-          <div className="flex flex-wrap gap-8 mt-12">
-            <div>
-              <h2 className="text-3xl font-bold">{internationalBrands.toLocaleString()}+</h2>
-              <p className="text-gray-600 text-sm mt-1">{t("internationalBrands")}</p>
-            </div>
-
-            <div className="hidden md:block w-px bg-gray-300"></div>
-
-            <div>
-              <h2 className="text-3xl font-bold">{highQualityProducts.toLocaleString()}+</h2>
-              <p className="text-gray-600 text-sm mt-1">{t("highQualityProducts")}</p>
-            </div>
-
-            <div className="hidden md:block w-px bg-gray-300"></div>
-
-            <div>
-              <h2 className="text-3xl font-bold">{happyCustomers.toLocaleString()}+</h2>
-              <p className="text-gray-600 text-sm mt-1">{t("happyCustomers")}</p>
-            </div>
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-6 lg:mt-12">
+            {stats.map((stat, i) => (
+              <Fragment key={stat.label}>
+                {i > 0 && <div className="hidden w-px bg-gray-300 md:block" />}
+                <div>
+                  <h2 className="text-2xl font-bold sm:text-3xl">{formatNumber.format(stat.value)}+</h2>
+                  <p className="mt-1 text-sm text-gray-600">{stat.label}</p>
+                </div>
+              </Fragment>
+            ))}
           </div>
         </div>
 
-        <div className="flex-1 flex justify-center relative md:py-0 py-6">
+        <div className="relative flex flex-1 justify-center py-6 md:py-0">
           <Image
             src="/images/fashion.jpg"
             alt="Fashion Model"
             width={650}
             height={700}
+            sizes="(max-width: 1024px) 90vw, 576px"
             priority
-            className="w-full max-w-md lg:max-w-xl h-auto object-cover"
+            className="h-auto w-full max-w-md object-cover lg:max-w-xl"
+          />
+          {/* Decorative stars: positioned in % of the image box instead of fixed px, sized per breakpoint */}
+          <Image
+            src="/images/star.jpg"
+            alt=""
+            width={44}
+            height={44}
+            className="pointer-events-none absolute inset-s-3 top-[60%] h-8 w-8 -translate-y-1/2 mix-blend-multiply sm:h-11 sm:w-11"
           />
           <Image
-  src="/images/star.jpg"
-  alt=""
-  width={44}
-  height={44}
-  className="absolute top-60 -translate-y-1/2 left-4 mix-blend-multiply w-11 h-11"
-/>
-<Image
-  src="/images/star.jpg"
-  alt=""
-  width={80}
-  height={80}
-  className="absolute top-30 -translate-y-1/2 right-4 mix-blend-multiply w-20 h-20"
-/>
+            src="/images/star.jpg"
+            alt=""
+            width={80}
+            height={80}
+            className="pointer-events-none absolute inset-e-4 top-[15%] h-14 w-14 -translate-y-1/2 mix-blend-multiply sm:h-20 sm:w-20"
+          />
         </div>
       </div>
     </section>
